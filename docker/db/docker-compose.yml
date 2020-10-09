@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+    mysql:
+        container_name: tes_db
+        hostname: mysql
+        image: mysql:5.7
+        ports:
+          - "3306:3306"
+        restart: always
+        environment:
+          MYSQL_DATABASE: tes_db
+          MYSQL_USER: amrilsyaifa
+          MYSQL_PASSWORD: Am12il1991!
+          MYSQL_ROOT_PASSWORD: Am12il1991!
+        volumes:
+          - persistent:/var/lib/mysql
+          - ./files:/files
+        networks:
+          - default
+volumes:
+    persistent:
